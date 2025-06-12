@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mewwoo - Biến yêu thương thành hành động cụ thể</title>
+    <meta name="description" content="Mewwoo - hệ sinh thái chăm sóc thú cưng thông minh đầu tiên tại Việt Nam, tích hợp thiết bị IoT, AI và nền tảng số, đồng hành bảo vệ sức khỏe chó mèo Việt." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Montserrat', Arial, sans-serif;
+        margin: 0;
+        background: #f5faff;
+        color: #223;
+      }
+      .navbar {
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 32px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .navbar-logo {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .navbar-logo img {
+        height: 54px;
+      }
+      .navbar-title {
+        font-weight: 900;
+        font-size: 1.7rem;
+        color: #0090dc;
+        letter-spacing: 1px;
+      }
+      .main-hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 16px 32px 16px;
+        background: linear-gradient(120deg, #e0f6ff 0%, #f8faff 100%);
+        position: relative;
+      }
+      .main-hero-logo {
+        flex: 1 1 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .main-hero-logo img {
+        width: 220px;
+        max-width: 90vw;
+      }
+      .main-hero-content {
+        flex: 1 1 400px;
+        min-width: 350px;
+        padding: 24px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .main-hero-title {
+        font-size: 2.6rem;
+        font-weight: 900;
+        color: #155fa0;
+        margin-bottom: 16px;
+        line-height: 1.15;
+        letter-spacing: -1px;
+      }
+      .main-hero-desc {
+        font-size: 1.2rem;
+        margin-bottom: 22px;
+        color: #223a5c;
+        font-weight: 500;
+      }
+      .cta-btn {
+        background: linear-gradient(90deg,#0090dc 0%,#12c2e9 100%);
+        color: #fff;
+        font-weight: 700;
+        border: none;
+        border-radius: 999px;
+        font-size: 1.1rem;
+        padding: 13px 34px;
+        margin-right: 20px;
+        margin-bottom: 8px;
+        box-shadow: 0 2px 12px 0 #a9d7f9a9;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .cta-btn:hover {
+        background: #0074b8;
+      }
+      .device-show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fff;
+        margin: 0 auto;
+        border-radius: 24px;
+        box-shadow: 0 4px 32px 0 #b3c2db18;
+        padding: 38px 16px 20px 16px;
+        max-width: 440px;
+        margin-top: -48px;
+        margin-bottom: 32px;
+        z-index: 2;
+        position: relative;
+      }
+      .device-show img {
+        width: 320px;
+        max-width: 95vw;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px #8bd5f433;
+        margin-bottom: 12px;
+      }
+      .device-title {
+        font-weight: 700;
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        color: #0086d8;
+      }
+      .device-desc {
+        font-size: 1rem;
+        color: #334;
+        margin-bottom: 6px;
+      }
+      .features-section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 16px 48px 16px;
+      }
+      .features-title {
+        text-align: center;
+        font-size: 2rem;
+        color: #0090dc;
+        font-weight: 900;
+        margin: 36px auto 28px auto;
+        letter-spacing: -0.5px;
+      }
+      .features-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 30px;
+      }
+      .feature-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 2px 16px 0 #a9d7f920;
+        padding: 28px 26px 22px 26px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        transition: box-shadow 0.2s;
+        position: relative;
+        border: 2px solid #e8f3fa;
+      }
+      .feature-card:hover {
+        box-shadow: 0 6px 32px #0090dc23;
+        border: 2px solid #0090dc30;
+      }
+      .feature-card h3 {
+        color: #155fa0;
+        font-weight: 700;
+        font-size: 1.12rem;
+        margin: 0 0 10px 0;
+      }
+      .feature-card p {
+        color: #333b55;
+        font-size: 1rem;
+        margin: 0 0 0 0;
+        line-height: 1.5;
+      }
+      .section-title {
+        margin: 54px 0 14px 0;
+        text-align: center;
+        color: #0079be;
+        font-weight: 900;
+        font-size: 1.7rem;
+      }
+      .footer {
+        background: #003b64;
+        color: #fff;
+        padding: 32px 0 16px 0;
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 36px;
+      }
+      .footer .brand {
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        color: #fff;
+        margin-bottom: 7px;
+      }
+      .footer .slogan {
+        color: #02c7f2;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 8px;
+      }
+      .footer .contact {
+        color: #d6eaff;
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+      }
+      @media (max-width: 900px) {
+        .main-hero {
+          flex-direction: column;
+        }
+        .main-hero-content {
+          padding: 24px 0;
+          min-width: 0;
+          width: 100%;
+        }
+        .device-show img {
+          width: 220px;
+        }
+      }
+      @media (max-width:600px) {
+        .main-hero-title {
+          font-size: 1.5rem;
+        }
+        .main-hero-content {
+          padding: 13px 2px;
+        }
+        .features-title, .section-title {
+          font-size: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img src="image1" alt="logo Mewwoo" />
+        <span class="navbar-title">Mewwoo</span>
+      </div>
+      <div style="font-weight:700; color:#223a5c; font-size:1.12rem;">
+        Biến yêu thương thành hành động cụ thể
+      </div>
+    </nav>
+    <section class="main-hero">
+      <div class="main-hero-logo">
+        <img src="image1" alt="logo Mewwoo" />
+      </div>
+      <div class="main-hero-content">
+        <div class="main-hero-title">
+          Hệ sinh thái chăm sóc thú cưng thông minh đầu tiên tại Việt Nam!
+        </div>
+        <div class="main-hero-desc">
+          Kết hợp thiết bị đeo thông minh và ứng dụng AI, giúp chủ nuôi chủ động theo dõi sức khỏe, định vị, dinh dưỡng & phối giống chó mèo. <br>
+          <span style="color:#0090dc;font-weight:600">Công nghệ - Nhân văn - Tiện ích - Đột phá</span>
+        </div>
+        <button class="cta-btn" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+          Khám phá tính năng
+        </button>
+      </div>
+    </section>
+    <section class="device-show">
+      <img src="image2" alt="Thiết bị đeo thông minh Mewwoo" />
+      <div class="device-title">Thiết bị đeo thông minh Mewwoo</div>
+      <div class="device-desc">Theo dõi nhịp tim, vận động, giấc ngủ, GPS, cảnh báo vùng an toàn</div>
+      <div class="device-desc" style="color:#155fa0;font-weight:700;">
+        Chống nước IP67 | Pin 5-7 ngày | Kết nối Wi-Fi/Bluetooth 5.0 | Giá chỉ từ 1.5 triệu đồng
+      </div>
+    </section>
+    <section class="features-section" id="features">
+      <div class="features-title">Tính năng nổi bật</div>
+      <div class="features-list">
+        <div class="feature-card">
+          <h3>Theo dõi sức khỏe 24/7 bằng AI</h3>
+          <p>Phát hiện bất thường, phân tích hành vi, cá nhân hóa phác đồ chăm sóc từng thú cưng.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Định vị GPS & cảnh báo vùng an toàn</h3>
+          <p>Theo dõi vị trí thời gian thực, cảnh báo khi thú cưng rời khỏi khu vực an toàn cài đặt.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Lịch nhắc tự động thông minh</h3>
+          <p>Nhắc lịch tiêm phòng, tẩy giun, ăn uống, sinh sản tự động, không lo quên!</p>
+        </div>
+        <div class="feature-card">
+          <h3>Cá nhân hóa dinh dưỡng & phân tích thức ăn</h3>
+          <p>Tư vấn thực đơn, cảnh báo thành phần độc hại, phù hợp từng giống loài và sức khỏe.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Gợi ý phối giống bằng AI - bảo tồn gen quý</h3>
+          <p>Phân tích gen, hỗ trợ phối giống an toàn, dự đoán nguy cơ di truyền bệnh lý.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Kết nối hệ sinh thái thú cưng</h3>
+          <p>Đặt lịch khám, tư vấn online, liên kết phòng khám, cửa hàng thú cưng, spa, bảo hiểm trên cùng 1 app.</p>
+        </div>
+      </div>
+      <div class="section-title">Về Mewwoo</div>
+      <div style="max-width:700px;margin:20px auto 0 auto;text-align:center;font-size:1.08rem;color:#223b56;font-weight:500;">
+        <b>Mewwoo</b> là nền tảng PetTech tiên phong tại Việt Nam, với sứ mệnh “Biến yêu thương thành hành động cụ thể”. Chúng tôi đồng hành cùng bạn trong hành trình chăm sóc sức khỏe, dinh dưỡng, sinh sản và bảo vệ an toàn cho thú cưng bằng công nghệ thông minh – nhân văn.<br><br>
+        <span style="color:#0079be;font-weight:700;">Tầm nhìn:</span> Xây dựng hệ sinh thái chăm sóc thú cưng hiện đại, nơi mọi chủ nuôi đều trở thành “bác sĩ tại gia” thông thái, góp phần nâng chuẩn chăm sóc thú cưng tại Việt Nam và Đông Nam Á.
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="brand">Mewwoo SmartPet Co., Ltd</div>
+      <div class="slogan">Biến yêu thương thành hành động cụ thể</div>
+      <div class="contact">
+        Địa chỉ: 123 Lý Chính Thắng, P. Võ Thị Sáu, Q.3, TP.HCM <br>
+        Hotline: 1900 1234 567 | Email: support@mewwoo.vn
+      </div>
+      <div style="padding-top: 7px; color: #b6e2fc; font-size:0.92rem">© 2025 Mewwoo SmartPet Company Limited</div>
+    </footer>
+  </body>
+</html>
